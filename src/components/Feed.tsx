@@ -1,9 +1,9 @@
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 import { getPosts } from "../api";
 import User from "./User";
 
 export default function Feed() {
-  const { isLoading, data } = useQuery("posts", getPosts);
+  const { isLoading, data } = useQuery(["posts"], getPosts);
 
   if (isLoading || !data) {
     return (
