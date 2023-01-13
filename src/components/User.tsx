@@ -15,7 +15,7 @@ export default function User({ userId }: Props) {
   }
 
   return (
-    <div className="inline-flex flex-row gap-2 items-center p-2">
+    <div className="inline-flex flex-row gap-2 items-center">
       <img
         className="w-12 rounded-full border-2"
         src={`https://i.pravatar.cc/300?u=${data.image}`}
