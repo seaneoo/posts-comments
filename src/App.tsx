@@ -24,7 +24,7 @@ function App() {
         </span>
       </div>
 
-      <div className="my-0 mx-auto p-8 w-1/2">
+      <div className="my-0 mx-auto p-4 lg:p-8 md:w-full lg:w-9/12 xl:w-1/2">
         <Feed />
       </div>
       <ReactQueryDevtools initialIsOpen={false} />
