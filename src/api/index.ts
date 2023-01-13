@@ -1,11 +1,4 @@
-export type Post = {
-  id: number;
-  title: string;
-  body: string;
-  userId: number;
-  tags: string[];
-  reactions: number;
-};
+import { Post } from "./types";
 
 export const getPosts = async () => {
   return await fetch("https://dummyjson.com/posts")
