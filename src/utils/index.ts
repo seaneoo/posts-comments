@@ -10,3 +10,5 @@ export const formatStr = (str: string, ...args: string[]) => {
   }
   return str;
 };
+
+export const MS_24_HOURS = 1000 * 60 * 60 * 24;

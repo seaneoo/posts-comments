@@ -1,14 +1,18 @@
 import { useQuery } from "@tanstack/react-query";
 import { getUser } from "../api";
+import { MS_24_HOURS } from "../utils";
 
 type Props = {
   userId: string;
 };
 
 export default function User({ userId }: Props) {
-  const { isLoading, data } = useQuery(["users", userId], () =>
-    getUser(userId)
-  );
+  const { isLoading, data } = useQuery({
+    queryKey: ["users", userId],
+    queryFn: () => getUser(userId),
+    cacheTime: MS_24_HOURS,
+    staleTime: MS_24_HOURS,
+  });
 
   if (isLoading || !data) {
     return <></>;
