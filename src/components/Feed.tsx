@@ -3,9 +3,9 @@ import { getPosts } from "../api";
 import Post from "./Post";
 
 export default function Feed() {
-  const { isLoading, data } = useQuery(["posts"], getPosts);
+  const query = useQuery(["posts"], getPosts);
 
-  if (isLoading || !data) {
+  if (query.isLoading || query.isFetching) {
     return (
       <div>
         <span>Loading</span>
@@ -15,7 +15,7 @@ export default function Feed() {
 
   return (
     <div className="flex flex-col gap-4">
-      {data.posts.map((post, i) => (
+      {query.data!.posts.map((post, i) => (
         <Post key={i} post={post} />
       ))}
     </div>
